@@ -1,0 +1,5 @@
+id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
+access_fajar_pembelian,access_fajar_pembelian,model_fajar_pembelian,,1,1,1,1
+access_fajar_pembelian_line,access_fajar_pembelian_line,model_fajar_pembelian_line,,1,1,1,1
+access_fajar_brand,access_fajar_brand,model_brand,,1,1,1,1
+access_fajar_pembelian_report_wizard,access_fajar_pembelian_report_wizard,model_fajar_pembelian_report_wizard,,1,1,1,1

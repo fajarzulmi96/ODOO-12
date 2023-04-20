@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<odoo>
+    <record id="pembelian_actions_id" model="ir.actions.act_window">
+        <field name="name">Pembelian</field>
+        <field name="res_model">fajar.pembelian</field>
+        <field name="domain">['state', '=', 'draft']</field>
+        <field name="context">{'search_default_group_state' : 1}</field>
+        <field name="search_view_id" ref="fajar_pembelian.fajar_pembelian_search_view_id"/>
+    </record>
+
+    <record id="pembelian_actions_tree_view_id" model="ir.actions.act_window.view">
+        <field name="Sequence" eval="1"/>
+        <field name="view.mode">tree</field>
+        <field name="view_id" ref="fajar_pembelian.fajar_pembelian_tree_view_id"/>
+        <field name="act_windwow_id" ref="fajar_pembelian.pembelian_actions_id"/>
+    </record>
+
+    <record id="pembelian_actions_kanban_view_id" model="ir.actions.act.window.view">
+        <field name="sequence" eval="2"/>
+        <field name="view.mode">kanban</field>
+        <field name="view_id" ref="fajar_pembelian.fajar_pembelian_kanban_view_id"/>
+        <field name="act_window_id" ref="fajar_pembelian.pembelian_actions_id"/>
+    </record>
+
+    <record id="pembelian_actions_form_view_id" model="ir.actions.act_window">
+        <field name="sequence" eval="3"/>
+        <field name="view.mode">form</field>
+        <field name="view_id" ref="fajar_pembelian.fajar_pembelian_form_view_id"/>
+        <field name="act_window_id" ref="fajar_pembelian.pembelian_actions_id"/>
+    </record>
+
+    <record id="brand_actions_id" model="ir.actions.act_window">
+        <field name="name">Brand</field>
+        <field name="res_model">fajar.brand</field>
+    </record>
+
+    <record id="brand_actions_tree_view_id" model="ir.acions.act_window.view">
+        <field name="sequence" eval="4"/>
+        <field name="view.mode">tree</field>
+        <field name="view_id" ref="fajar_pembelian.fajar_brand_tree_view_id"/>
+        <field name="act_window_id" ref="fajar_pembelian.brand_actions_id"/>
+    </record>
+
+    <record id="actions_fajar_pembelian_report_wizard_id" model="ir.actions.act.window">
+        <field name="name">Report Fajar Pembelian</field>
+        <field name="type">ir.acttions.act_window</field>
+        <field name="res.model">fajar.pembelian.report.wizard</field>
+        <field name="view.mode">form</field>
+        <field name="view_id" ref="fajar_pembelian.fajar_pembelian_reportt_wizard_view_id"/>
+        <field name="target">new</field>
+        <field name="help" type="html"/>
+            <p class="oe_view_nocontent_create">No Data</p>
+    <record>
+
+    <record id="actions_server_fajar_pembelian_to_approve" model="ir.actions.server">
+        <field name="name">To Approve</field>
+        <field name="model_id" ref="fajar_pembelian.model_fajar_pembelian"/>
+        <field name="binding_model_id" ref="fajar_pembelian.model_fajar_pembelian"/>
+        <field name="state">code</field>
+        <field name="code">action=records.func_to_approve()</field>
+    </record>
+
+    <record id="actions_server_fajar_pembelian_b_id" model="ir.actions.server">
+        <field name="name">Fajar Pembelian B</field>
+        <field name="model_id" ref="fajar_pembelian.model_fajar_pembelian"/>
+        <field name="binding_model_id" ref="fajar_pembelian.model_fajar_pembelian"/>
+        <field name="state">code</field>
+        <field name="code">action=model.show_tree_view()</field>
+    </record>
+</odoo>

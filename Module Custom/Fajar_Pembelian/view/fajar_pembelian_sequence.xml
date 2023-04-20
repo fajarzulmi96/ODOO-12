@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<odoo>
+    <record id="sequence_fajar_pembelian_id" model="ir.sequence">
+        <field name="name">sequence_fajar_pembelian_id</field>
+        <field name="code">fajar.pembelian</field>
+        <field name="prefix">FP/%(year)s/%(month)s/</field>
+        <field eval="1" name="number_next"/>
+        <field eval="1" name="number_increment"/>
+        <field eval="True" name="use_data_range"/>
+        <field name="company_id" eval="False"/>
+        <field name="padding">6</field> 
+    </record>
+</odoo>
